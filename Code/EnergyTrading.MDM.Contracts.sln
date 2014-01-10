@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyTrading.MDM.Contracts", "EnergyTrading.MDM.Contracts\EnergyTrading.MDM.Contracts.csproj", "{3EA7E203-C82B-43DF-B10D-C98F5C18E3F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyTrading.MDM.Contracts.Tests", "EnergyTrading.MDM.Contracts.Tests\EnergyTrading.MDM.Contracts.Tests.csproj", "{104A8713-F9F2-479B-9BDB-1229A47EAAF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EA7E203-C82B-43DF-B10D-C98F5C18E3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA7E203-C82B-43DF-B10D-C98F5C18E3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA7E203-C82B-43DF-B10D-C98F5C18E3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA7E203-C82B-43DF-B10D-C98F5C18E3F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104A8713-F9F2-479B-9BDB-1229A47EAAF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104A8713-F9F2-479B-9BDB-1229A47EAAF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104A8713-F9F2-479B-9BDB-1229A47EAAF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104A8713-F9F2-479B-9BDB-1229A47EAAF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

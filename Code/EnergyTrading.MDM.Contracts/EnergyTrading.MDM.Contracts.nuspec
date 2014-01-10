@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <version>$version$</version>
+        <authors>RWE</authors>
+        <owners>RWE</owners>
+        <dependencies>
+            <dependency id="EnergyTrading.Contracts" version="" />            
+        </dependencies>
+        <id>EnergyTrading.MDM.Contracts</id>
+        <title>EnergyTrading.MDM.Contracts</title>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>XML contract structures for EnergyTrading MDM</description>
+        <releaseNotes>Newly created</releaseNotes>
+        <copyright>Copyright RWE 2012</copyright>
+    </metadata>
+    <files>
+        <file src="Code\EnergyTrading.MDM.Contracts\bin\Release\EnergyTrading.MDM.Contracts.dll" target="lib\net35" />
+        <file src="Code\EnergyTrading.MDM.Contracts\bin\Release\EnergyTrading.MDM.Contracts.pdb" target="lib\net35" />
+        <file src="Code\EnergyTrading.MDM.Contracts\bin\Release\EnergyTrading.MDM.Contracts.xml" target="lib\net35" />
+    </files>
+</package>
