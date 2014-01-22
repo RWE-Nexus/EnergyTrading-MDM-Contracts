@@ -49,10 +49,14 @@ namespace RWEST.Nexus.MDM.Contracts
 
         [DataMember(Order = 11)]
         [XmlElement]
-        public string InvoiceAddress { get; set; }
+        public string CustomerAddress { get; set; }
 
         [DataMember(Order = 12)]
         [XmlElement]
         public string InvoiceSetup { get; set; }
+
+        [DataMember(Order = 13)]
+        [XmlElement]
+        public string VendorAddress { get; set; }
     }
 }
