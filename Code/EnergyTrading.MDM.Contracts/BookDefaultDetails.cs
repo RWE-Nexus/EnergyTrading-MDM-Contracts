@@ -26,5 +26,13 @@
         [DataMember(Order = 5)]
         [XmlElement]
         public virtual EntityId Book { get; set; }
+
+        [DataMember(Order = 6)]
+        [XmlElement]
+        public virtual string DefaultType { get; set; }
+
+        [DataMember(Order = 7)]
+        [XmlElement]
+        public virtual EntityId PartyRole { get; set; }
     }
 }
