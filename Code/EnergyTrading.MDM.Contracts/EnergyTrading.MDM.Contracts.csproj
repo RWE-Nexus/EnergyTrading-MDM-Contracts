@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EnergyTrading.Contracts">
-      <HintPath>..\packages\EnergyTrading.Contracts.2.7.28050.11\lib\net35\EnergyTrading.Contracts.dll</HintPath>
+      <HintPath>..\packages\EnergyTrading.Contracts.2.7.29421.12\lib\net35\EnergyTrading.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
