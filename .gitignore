@@ -1,0 +1,22 @@
+
+# /Code/
+/Code/_ReSharper.MDM.Contracts
+/Code/*.user
+/Code/*.suo
+/Code/TestResults
+
+# /Code/EnergyTrading.MDM.Contracts/
+/Code/EnergyTrading.MDM.Contracts/[Bb]in
+/Code/EnergyTrading.MDM.Contracts/obj
+/Code/EnergyTrading.MDM.Contracts/[Dd]ebug
+/Code/EnergyTrading.MDM.Contracts/[Rr]elease
+/Code/EnergyTrading.MDM.Contracts/*.user
+/Code/EnergyTrading.MDM.Contracts/*.aps
+/Code/EnergyTrading.MDM.Contracts/*.eto
+
+# /Code/EnergyTrading.MDM.Contracts.Tests/
+/Code/EnergyTrading.MDM.Contracts.Tests/bin
+/Code/EnergyTrading.MDM.Contracts.Tests/obj
+
+# /Code/packages/
+/Code/packages/Nexus.*
