@@ -105,6 +105,7 @@
     <Compile Include="TenorType.cs" />
     <Compile Include="TenorTypeDetails.cs" />
     <Compile Include="TenorTypeList.cs" />
+    <Compile Include="VersionedMdmEntity.cs" />
     <Compile Include="Vessel.cs" />
     <Compile Include="VesselDetails.cs" />
     <Compile Include="VesselList.cs" />
