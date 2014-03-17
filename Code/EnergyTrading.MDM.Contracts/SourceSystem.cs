@@ -4,7 +4,7 @@
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
-    using RWEST.Nexus.Contracts.Atom;
+    using EnergyTrading.Contracts.Atom;
 
     [DataContract(Namespace = "http://schemas.energytrading.com/mdm")]
     [XmlRoot(Namespace = "http://schemas.energytrading.com/mdm")]

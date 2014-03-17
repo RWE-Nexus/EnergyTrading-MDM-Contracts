@@ -1,4 +1,4 @@
-﻿namespace RWEST.Nexus.MDM.Contracts.Test
+﻿namespace EnergyTrading.Mdm.Contracts.Test
 {
     using EnergyTrading.Mdm.Contracts;
 

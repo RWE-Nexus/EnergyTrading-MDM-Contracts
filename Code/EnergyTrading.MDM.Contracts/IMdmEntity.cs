@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    using RWEST.Nexus.Contracts.Atom;
+    using EnergyTrading.Contracts.Atom;
 
     /// <summary>
     /// Interface supported by all MDM entities.

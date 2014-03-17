@@ -9,7 +9,7 @@
     <ProjectGuid>{104A8713-F9F2-479B-9BDB-1229A47EAAF2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RWEST.Nexus.MDM.Contracts.Test</RootNamespace>
+    <RootNamespace>EnergyTrading.Mdm.Contracts.Test</RootNamespace>
     <AssemblyName>EnergyTrading.MDM.Contracts.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

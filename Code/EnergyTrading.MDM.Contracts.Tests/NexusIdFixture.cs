@@ -1,11 +1,10 @@
-﻿namespace RWEST.Nexus.MDM.Contracts.Test
+﻿namespace EnergyTrading.Mdm.Contracts.Test
 {
     using System;
 
     using EnergyTrading.Mdm.Contracts;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 
     [TestClass]
     public class MdmIdFixture

@@ -4,7 +4,7 @@
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
-    using RWEST.Nexus.Contracts.Atom;
+    using EnergyTrading.Contracts.Atom;
 
     /// <summary>
     /// A foreign key to a <see cref="IMdmEntity" />.
