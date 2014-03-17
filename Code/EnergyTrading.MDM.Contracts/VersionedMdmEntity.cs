@@ -1,4 +1,4 @@
-﻿namespace EnergyTrading.Mdm.Contracts
+namespace EnergyTrading.Mdm.Contracts
 {
     public class VersionedMdmEntity
     {
@@ -7,7 +7,7 @@
 
         public T As<T>() where T : class, IMdmEntity
         {
-            return this.Entity as T;
+            return Entity as T;
         }
     }
 }
