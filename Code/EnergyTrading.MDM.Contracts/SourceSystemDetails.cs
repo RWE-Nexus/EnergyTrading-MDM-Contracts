@@ -1,18 +1,18 @@
-﻿namespace RWEST.Nexus.MDM.Contracts
+﻿namespace EnergyTrading.Mdm.Contracts
 {
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
-    [DataContract(Namespace = "http://schemas.rwe.com/nexus")]
-    [XmlType(Namespace = "http://schemas.rwe.com/nexus")]
+    [DataContract(Namespace = "http://schemas.energytrading.com/mdm")]
+    [XmlType(Namespace = "http://schemas.energytrading.com/mdm")]
     public class SourceSystemDetails
     {
         [DataMember(Order = 1)]
         [XmlElement]
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
         [DataMember(Order = 3)]
         [XmlElement]
-        public EntityId Parent { get; set; }
+        public virtual EntityId Parent { get; set; }
     }
 }

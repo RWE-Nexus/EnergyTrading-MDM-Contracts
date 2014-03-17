@@ -1,4 +1,4 @@
-﻿namespace RWEST.Nexus.MDM.Contracts
+﻿namespace EnergyTrading.Mdm.Contracts
 {
     public static class QueryConstants
     {

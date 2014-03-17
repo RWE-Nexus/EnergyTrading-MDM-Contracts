@@ -2,19 +2,20 @@
 {
     using System;
 
+    using EnergyTrading.Mdm.Contracts;
+
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    using RWEST.Nexus.MDM.Contracts;
 
     [TestClass]
-    public class NexusIdFixture
+    public class MdmIdFixture
     {
         [TestMethod]
         public void ReturnsNumericIdentifierValue()
         {
-            var entityId = new EntityId { Identifier = new NexusId { Identifier = "3" } };
+            var entityId = new EntityId { Identifier = new MdmId { Identifier = "3" } };
 
-            var candidate = entityId.NexusId();
+            var candidate = entityId.MdmId();
             Assert.IsTrue(candidate.HasValue);
             Assert.AreEqual(3, candidate.Value);
         }
@@ -22,9 +23,9 @@
         [TestMethod]
         public void ReturnsZeroForNonNumericIdentifierValue()
         {
-            var entityId = new EntityId { Identifier = new NexusId { Identifier = "A" } };
+            var entityId = new EntityId { Identifier = new MdmId { Identifier = "A" } };
 
-            var candidate = entityId.NexusId();
+            var candidate = entityId.MdmId();
             Assert.IsTrue(candidate.HasValue);
             Assert.AreEqual(0, candidate.Value);
         }
@@ -34,7 +35,7 @@
         {
             EntityId entityId = null;
 
-            var candidate = entityId.NexusId();
+            var candidate = entityId.MdmId();
             Assert.IsFalse(candidate.HasValue);
         }
 
@@ -43,14 +44,14 @@
         {
             var entityId = new EntityId();
 
-            var candidate = entityId.NexusId();
+            var candidate = entityId.MdmId();
             Assert.IsFalse(candidate.HasValue);
         }
 
         [TestMethod]
         public void ToStringDisplaysSystemAndIdentifier()
         {
-            var value = new NexusId { SystemName = "CME", Identifier = "MFF" };
+            var value = new MdmId { SystemName = "CME", Identifier = "MFF" };
 
             Assert.AreEqual("CME/MFF", value.ToString());
         }
@@ -58,7 +59,7 @@
         [TestMethod]
         public void NotEqualOnNull()
         {
-            var value = new NexusId { SystemName = "CME", Identifier = "MFF" };
+            var value = new MdmId { SystemName = "CME", Identifier = "MFF" };
 
             Assert.IsFalse(value.Equals(null));
         }
@@ -66,15 +67,15 @@
         [TestMethod]
         public void EqualOnSystemNameIdentifier()
         {
-            var value = new NexusId
+            var value = new MdmId
             {
                 SystemName = "CME",
                 Identifier = "MFF",
-                IsNexusId = true,
+                IsMdmId = true,
                 StartDate = DateTime.Now,
                 EndDate = DateTime.Now.AddDays(5)
             };
-            var candidate = new NexusId { SystemName = "CME", Identifier = "MFF" };
+            var candidate = new MdmId { SystemName = "CME", Identifier = "MFF" };
 
             Assert.IsTrue(value.Equals(candidate));
         }

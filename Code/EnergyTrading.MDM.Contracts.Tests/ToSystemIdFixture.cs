@@ -1,7 +1,9 @@
 ﻿namespace RWEST.Nexus.MDM.Contracts.Test
 {
+    using EnergyTrading.Mdm.Contracts;
+
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    
+
     [TestClass]
     public class ToSystemIdFixture
     {
@@ -10,7 +12,7 @@
         [TestMethod]
         public void ReturnNullForNullMdmEntity()
         {
-            Commodity entity = null;
+            SourceSystem entity = null;
 
             var candidate = entity.ToSystemId(SystemName);
 
@@ -20,7 +22,7 @@
         [TestMethod]
         public void ReturnNullForZeroIdentifiers()
         {
-            var entity = new Commodity();
+            var entity = new SourceSystem();
 
             var candidate = entity.ToSystemId(SystemName);
 
@@ -30,8 +32,8 @@
         [TestMethod]
         public void ReturnNullForNoSystemIdentifier()
         {
-            var entity = new Commodity();
-            entity.Identifiers.Add(new NexusId());
+            var entity = new SourceSystem();
+            entity.Identifiers.Add(new MdmId());
 
             var candidate = entity.ToSystemId(SystemName);
 
@@ -41,8 +43,8 @@
         [TestMethod]
         public void ReturnNexusIdentifier()
         {
-            var expected = new NexusId { Identifier = "1", SystemName = SystemName };
-            var entity = new Commodity { Identifiers = new NexusIdList { new NexusId(), expected } };
+            var expected = new MdmId { Identifier = "1", SystemName = SystemName };
+            var entity = new SourceSystem { Identifiers = new MdmIdList { new MdmId(), expected } };
 
             var candidate = entity.ToSystemId(SystemName);
 

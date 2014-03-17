@@ -1,4 +1,4 @@
-﻿namespace RWEST.Nexus.MDM.Contracts
+﻿namespace EnergyTrading.Mdm.Contracts
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -12,8 +12,8 @@
     /// <remarks>
     /// Sufficient information so we can display a label and know how to retrieve the target.
     /// </remarks>
-    [DataContract(Namespace = "http://schemas.rwe.com/nexus")]
-    [XmlType(Namespace = "http://schemas.rwe.com/nexus")]
+    [DataContract(Namespace = "http://schemas.energytrading.com/mdm")]
+    [XmlType(Namespace = "http://schemas.energytrading.com/mdm")]
     public class EntityId
     {
         /// <summary>
@@ -29,14 +29,14 @@
         /// </summary>
         [DataMember(Order = 1)]
         [XmlElement]
-        public NexusId Identifier { get; set; }
+        public virtual MdmId Identifier { get; set; }
 
         /// <summary>
         /// Gets or sets the name property.
         /// </summary>
         [DataMember(Order = 2)]
         [XmlElement]
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the Links collection.
@@ -47,7 +47,7 @@
         /// </summary>
         [DataMember(Order = 3, EmitDefaultValue = false)]
         [XmlElement("link", Namespace = "http://www.w3.org/2005/Atom")]
-        public List<Link> Links { get; set; }
+        public virtual List<Link> Links { get; set; }
 
         public override string ToString()
         {

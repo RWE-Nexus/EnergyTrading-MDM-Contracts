@@ -1,4 +1,4 @@
-﻿namespace RWEST.Nexus.MDM.Contracts
+﻿namespace EnergyTrading.Mdm.Contracts
 {
     using System.Collections.Generic;
 
@@ -12,7 +12,7 @@
         /// <summary>
         /// Gets or sets the Identifiers property.
         /// </summary>
-        NexusIdList Identifiers { get; set; }
+        MdmIdList Identifiers { get; set; }
 
         /// <summary>
         /// Gets or sets the details property.
@@ -25,7 +25,7 @@
         /// <summary>
         /// Gets or sets
         /// </summary>
-        SystemData Nexus { get; set; }
+        SystemData MdmSystemData { get; set; }
 
         /// <summary>
         /// Gets or sets the Audit property.

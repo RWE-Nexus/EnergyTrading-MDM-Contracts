@@ -1,29 +1,29 @@
-﻿namespace RWEST.Nexus.MDM.Contracts
+﻿namespace EnergyTrading.Mdm.Contracts
 {
     using System;
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
-    [DataContract(Namespace = "http://schemas.rwe.com/nexus")]
-    [XmlType(Namespace = "http://schemas.rwe.com/nexus")]
+    [DataContract(Namespace = "http://schemas.energytrading.com/mdm")]
+    [XmlType(Namespace = "http://schemas.energytrading.com/mdm")]
     public class SystemData
     {
         [DataMember(Order = 1)]
         [XmlElement]
-        public DateTime? StartDate { get; set; }
+        public virtual DateTime? StartDate { get; set; }
 
         [XmlIgnore]
-        public bool StartDateSpecified
+        public virtual bool StartDateSpecified
         {
             get { return this.StartDate.HasValue; }
         }
 
         [DataMember(Order = 2)]
         [XmlElement]
-        public DateTime? EndDate { get; set; }
+        public virtual DateTime? EndDate { get; set; }
 
         [XmlIgnore]
-        public bool EndDateSpecified
+        public virtual bool EndDateSpecified
         {
             get { return this.EndDate.HasValue; }
         }

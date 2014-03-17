@@ -12,7 +12,6 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>XML contract structures for EnergyTrading MDM</description>
         <releaseNotes>Newly created</releaseNotes>
-        <copyright>Copyright RWE 2012</copyright>
     </metadata>
     <files>
         <file src="Code\EnergyTrading.MDM.Contracts\bin\Release\EnergyTrading.MDM.Contracts.dll" target="lib\net35" />

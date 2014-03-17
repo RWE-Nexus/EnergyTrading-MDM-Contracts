@@ -1,8 +1,8 @@
 ﻿namespace RWEST.Nexus.MDM.Contracts.Test
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using EnergyTrading.Mdm.Contracts;
 
-    using RWEST.Nexus.MDM.Contracts;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class ToMdmKeyFixture
@@ -10,7 +10,7 @@
         [TestMethod]
         public void ReturnZeroForNullMdmEntity()
         {
-            Commodity entity = null;
+            SourceSystem entity = null;
 
             var candidate = entity.ToMdmKey();
 
@@ -20,7 +20,7 @@
         [TestMethod]
         public void ReturnZeroForZeroIdentifiers()
         {
-            var entity = new Commodity();
+            var entity = new SourceSystem();
 
             var candidate = entity.ToMdmKey();
 
@@ -30,8 +30,8 @@
         [TestMethod]
         public void ReturnZeroForNoNexusIdentifier()
         {
-            var entity = new Commodity();
-            entity.Identifiers.Add(new NexusId());
+            var entity = new SourceSystem();
+            entity.Identifiers.Add(new MdmId());
 
             var candidate = entity.ToMdmKey();
 
@@ -41,8 +41,8 @@
         [TestMethod]
         public void ReturnNexusIdentifier()
         {
-            var expected = new NexusId { Identifier = "1", IsNexusId = true };
-            var entity = new Commodity { Identifiers = new NexusIdList { new NexusId(), expected } };
+            var expected = new MdmId { Identifier = "1", IsMdmId = true };
+            var entity = new SourceSystem { Identifiers = new MdmIdList { new MdmId(), expected } };
 
             var candidate = entity.ToMdmKey();
 

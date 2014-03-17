@@ -1,8 +1,9 @@
 ﻿namespace RWEST.Nexus.MDM.Contracts.Test
 {
+    using EnergyTrading.Mdm.Contracts;
+
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    using RWEST.Nexus.MDM.Contracts;
 
     [TestClass]
     public class ToIdentifierFixture
@@ -19,7 +20,7 @@
         [TestMethod]
         public void ReturnIdentifierOfEntityId()
         {
-            var value = new EntityId { Identifier = new NexusId { Identifier = "A" } };
+            var value = new EntityId { Identifier = new MdmId { Identifier = "A" } };
 
             var candidate = value.ToIdentifier();
             Assert.AreEqual("A", candidate);
@@ -35,18 +36,18 @@
         }
 
         [TestMethod]
-        public void ReturnNullIfNexusIdIsNull()
+        public void ReturnNullIfMdmIdIsNull()
         {
-            NexusId value = null;
+            MdmId value = null;
 
             var candidate = value.ToIdentifier();
             Assert.IsNull(candidate);
         }
 
         [TestMethod]
-        public void ReturnIdentifierOfNexusId()
+        public void ReturnIdentifierOfMdmId()
         {
-            var value = new NexusId { Identifier = "A" };
+            var value = new MdmId { Identifier = "A" };
 
             var candidate = value.ToIdentifier();
             Assert.AreEqual("A", candidate);

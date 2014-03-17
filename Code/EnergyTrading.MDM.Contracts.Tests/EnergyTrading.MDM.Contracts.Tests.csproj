@@ -62,7 +62,6 @@
     <Compile Include="ToIdentifierFixture.cs" />
     <Compile Include="ToMdmIdFixture.cs" />
     <Compile Include="ToMdmKeyFixture.cs" />
-    <Compile Include="ToMdmKeyPropertyFixture.cs" />
     <Compile Include="ToMdmKeyStringFixture.cs" />
     <Compile Include="ToSystemIdFixture.cs" />
   </ItemGroup>

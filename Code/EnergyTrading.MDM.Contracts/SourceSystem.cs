@@ -1,4 +1,4 @@
-﻿namespace RWEST.Nexus.MDM.Contracts
+﻿namespace EnergyTrading.Mdm.Contracts
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -6,14 +6,14 @@
 
     using RWEST.Nexus.Contracts.Atom;
 
-    [DataContract(Namespace = "http://schemas.rwe.com/nexus")]
-    [XmlRoot(Namespace = "http://schemas.rwe.com/nexus")]
-    [XmlType(Namespace = "http://schemas.rwe.com/nexus")]
+    [DataContract(Namespace = "http://schemas.energytrading.com/mdm")]
+    [XmlRoot(Namespace = "http://schemas.energytrading.com/mdm")]
+    [XmlType(Namespace = "http://schemas.energytrading.com/mdm")]
     public class SourceSystem : IMdmEntity
     {
         public SourceSystem()
         {
-            this.Identifiers = new NexusIdList();
+            this.Identifiers = new MdmIdList();
             this.Details = new SourceSystemDetails();
             this.Links = new List<Link>();
         }
@@ -21,23 +21,23 @@
         [DataMember(Order = 1)]
         [XmlArray]
         [XmlArrayItem("ReferenceID")]
-        public NexusIdList Identifiers { get; set; }
+        public virtual MdmIdList Identifiers { get; set; }
 
         [DataMember(Order = 2)]
         [XmlElement]
-        public SourceSystemDetails Details { get; set; }
+        public virtual SourceSystemDetails Details { get; set; }
 
         [DataMember(Order = 3, EmitDefaultValue = false)]
         [XmlElement]
-        public SystemData Nexus { get; set; }
+        public virtual SystemData MdmSystemData { get; set; }
 
         [DataMember(Order = 4, EmitDefaultValue = false)]
         [XmlElement]
-        public Audit Audit { get; set; }
+        public virtual Audit Audit { get; set; }
 
         [DataMember(Order = 5, EmitDefaultValue = false)]
         [XmlElement("link", Namespace = "http://www.w3.org/2005/Atom")]
-        public List<Link> Links { get; set; }
+        public virtual List<Link> Links { get; set; }
 
         object IMdmEntity.Details
         {

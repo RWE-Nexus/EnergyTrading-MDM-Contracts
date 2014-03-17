@@ -1,4 +1,4 @@
-﻿namespace RWEST.Nexus.MDM.Contracts
+﻿namespace EnergyTrading.Mdm.Contracts
 {
     using System;
     using System.Collections.Generic;
@@ -15,7 +15,7 @@
         /// <param name="entity">Entity to check</param>
         /// <param name="value">Identifier to use</param>
         /// <returns>true if the identifier is equal to any of the entities identifiers, otherwise false.</returns>
-        public static bool HasIdentifier(this IMdmEntity entity, NexusId value)
+        public static bool HasIdentifier(this IMdmEntity entity, MdmId value)
         {
             if (entity == null || value == null)
             {
@@ -26,11 +26,11 @@
         }
 
         /// <summary>
-        /// Get the identity of the nexus identifier
+        /// Get the identity of the MDM identifier
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static int? NexusId(this EntityId value)
+        public static int? MdmId(this EntityId value)
         {
             if (value == null || value.Identifier == null)
             {
@@ -46,7 +46,7 @@
         /// <param name="entity">Entity to use</param>
         /// <param name="systemName">System to use if no SourceSystemOriginated identifier exists</param>
         /// <returns>The identifier with SourceSystemOriginated, or the one identified by systemName or the first identifier</returns>
-        public static NexusId PrimaryIdentifier(this IMdmEntity entity, string systemName = null)
+        public static MdmId PrimaryIdentifier(this IMdmEntity entity, string systemName = null)
         {
             return entity == null ? null : entity.Identifiers.PrimaryIdentifier(systemName);
         }
@@ -57,7 +57,7 @@
         /// <param name="identifiers">List of identifiers to query</param>
         /// <param name="systemName">System to use if no SourceSystemOriginated identifier exists</param>
         /// <returns>The identifier with SourceSystemOriginated, or the one identified by systemName or the first identifier</returns>
-        public static NexusId PrimaryIdentifier(this IList<NexusId> identifiers, string systemName = null)
+        public static MdmId PrimaryIdentifier(this IList<MdmId> identifiers, string systemName = null)
         {
             if (identifiers == null || identifiers.Count == 0)
             {
@@ -74,23 +74,23 @@
         }
 
         /// <summary>
-        /// Gets a NexusId for a system
+        /// Gets a MdmId for a system
         /// </summary>
         /// <param name="entity">Entity to use</param>
         /// <param name="systemName">System to check</param>
         /// <returns>First identifier found for the system or null if not found.</returns>
-        public static NexusId SystemId(this IMdmEntity entity, string systemName = "Nexus")
+        public static MdmId SystemId(this IMdmEntity entity, string systemName = "Nexus")
         {
             return entity == null ? null : entity.Identifiers.SystemId(systemName);
         }
 
         /// <summary>
-        /// Gets a NexusId for a system
+        /// Gets a MdmId for a system
         /// </summary>
         /// <param name="identifiers">Identifiers to use</param>
         /// <param name="systemName">System to check</param>
         /// <returns>First identifier found for the system or null if not found.</returns>
-        public static NexusId SystemId(this IList<NexusId> identifiers, string systemName = "Nexus")
+        public static MdmId SystemId(this IList<MdmId> identifiers, string systemName = "Nexus")
         {
             return identifiers == null ? null : identifiers.FirstOrDefault(x => x.SystemName == systemName);
         }
@@ -113,19 +113,19 @@
         /// <param name="identifiers">Identifiers to use</param>
         /// <param name="systemName">System to check</param>
         /// <returns>First identifier found for the system or <see cref="string.Empty"/> if not found.</returns>
-        public static string SystemIdentifier(this IList<NexusId> identifiers, string systemName = "Nexus")
+        public static string SystemIdentifier(this IList<MdmId> identifiers, string systemName = "Nexus")
         {
             var id = identifiers.SystemId(systemName);
             return id == null ? null : id.Identifier;
         }
 
         /// <summary>
-        /// Creates an <see cref="EntityId" /> from a <see cref="NexusId" />
+        /// Creates an <see cref="EntityId" /> from a <see cref="MdmId" />
         /// </summary>
-        /// <param name="value">NexusId to use</param>
+        /// <param name="value">MdmId to use</param>
         /// <param name="name">Optional name to use</param>
-        /// <returns>A new <see cref="EntityId" /> wrapping the original NexusId</returns>
-        public static EntityId ToEntityId(this NexusId value, string name = null)
+        /// <returns>A new <see cref="EntityId" /> wrapping the original MdmId</returns>
+        public static EntityId ToEntityId(this MdmId value, string name = null)
         {
             return new EntityId
             {
@@ -145,11 +145,11 @@
         }
 
         /// <summary>
-        /// Convert a <see cref="NexusId" /> to a string identifier.
+        /// Convert a <see cref="MdmId" /> to a string identifier.
         /// </summary>
-        /// <param name="value">NexusId to use.</param>
+        /// <param name="value">MdmId to use.</param>
         /// <returns>Null if the identifier is null, value.Identifier otherwise.</returns>
-        public static string ToIdentifier(this NexusId value)
+        public static string ToIdentifier(this MdmId value)
         {
             return value == null ? null : value.Identifier;
         }
@@ -160,7 +160,7 @@
         /// <param name="identifier">Identifier to use.</param>
         /// <param name="defaultKey">Value if not found, defaults to zero</param>
         /// <returns>Numeric value of the identifier or the default if the identifier is null or does not convert.</returns>
-        public static int ToKey(this NexusId identifier, int defaultKey = 0)
+        public static int ToKey(this MdmId identifier, int defaultKey = 0)
         {
             if (identifier == null)
             {
@@ -181,11 +181,11 @@
         }
 
         /// <summary>
-        /// Converts an <see cref="NexusId" /> into a <see cref="Mapping" />
+        /// Converts an <see cref="MdmId" /> into a <see cref="Mapping" />
         /// </summary>
-        /// <param name="value">NexusId to convert.</param>
+        /// <param name="value">MdmId to convert.</param>
         /// <returns>Converted mapping if not null, otherwise null</returns>
-        public static Mapping ToMapping(this NexusId value)
+        public static Mapping ToMapping(this MdmId value)
         {
             if (value == null)
             {
@@ -198,7 +198,7 @@
                 MappingId = value.MappingId,
                 SystemName = value.SystemName,
                 Identifier = value.Identifier,
-                IsNexusId = value.IsNexusId,
+                IsMdmId = value.IsMdmId,
                 DefaultReverseInd = value.DefaultReverseInd,
                 SourceSystemOriginated = value.SourceSystemOriginated,
                 StartDate = value.StartDate,
@@ -211,9 +211,9 @@
         /// </summary>
         /// <param name="entity">Entity to use</param>
         /// <returns></returns>
-        public static NexusId ToMdmId(this IMdmEntity entity)
+        public static MdmId ToMdmId(this IMdmEntity entity)
         {
-            return entity == null ? null : entity.Identifiers.FirstOrDefault(id => id.IsNexusId);
+            return entity == null ? null : entity.Identifiers.FirstOrDefault(id => id.IsMdmId);
         }
 
         /// <summary>
@@ -243,7 +243,7 @@
                 return 0;
             }
 
-            return access(entity).ToNexusKey();
+            return access(entity).ToMdmKey();
         }
 
         /// <summary>
@@ -258,50 +258,14 @@
         }
 
         /// <summary>
-        /// Locate the Nexus identifier for a MDM entity.
-        /// </summary>
-        /// <param name="entity">Entity to use</param>
-        /// <returns></returns>
-        [Obsolete("Use ToMdmId")]
-        public static NexusId ToNexusId(this IMdmEntity entity)
-        {
-            return entity.Identifiers.FirstOrDefault(id => id.IsNexusId);
-        }
-
-        /// <summary>
-        /// Get the Nexus key for a MDM entity
-        /// </summary>
-        /// <param name="entity">Entity to use</param>
-        /// <param name="defaultValue"></param>
-        /// <returns></returns>
-        [Obsolete("Use ToMdmKey")]
-        public static int ToNexusKey(this IMdmEntity entity, int defaultValue = 0)
-        {
-            var nexusId = entity.ToNexusId();
-            return nexusId.ToKey(defaultValue);
-        }
-
-        /// <summary>
         /// Get the entity identifier from an <see cref="EntityId" />
         /// </summary>
         /// <param name="id">Identifier to use.</param>
         /// <param name="defaultValue">Value if not found, defaults to zero</param>        
         /// <returns></returns>      
-        public static int ToNexusKey(this EntityId id, int defaultValue = 0)
+        public static int ToMdmKey(this EntityId id, int defaultValue = 0)
         {
             return id == null ? defaultValue : id.Identifier.ToKey();
-        }
-
-        /// <summary>
-        /// Get the Nexus key for a MDM entity
-        /// </summary>
-        /// <param name="entity">Entity to use</param>
-        /// <returns></returns>
-        [Obsolete("Use ToMdmKeyString")]        
-        public static string ToNexusKeyString(this IMdmEntity entity)
-        {
-            var nexusId = entity.ToNexusId();
-            return nexusId == null ? string.Empty : nexusId.Identifier;
         }
 
         /// <summary>
@@ -310,7 +274,7 @@
         /// <param name="entity">Entity to use</param>
         /// <param name="systemName">Name of system to locate</param>
         /// <returns></returns>
-        public static NexusId ToSystemId(this IMdmEntity entity, string systemName)
+        public static MdmId ToSystemId(this IMdmEntity entity, string systemName)
         {
             return entity == null ? null : entity.Identifiers.SystemId(systemName);
         }

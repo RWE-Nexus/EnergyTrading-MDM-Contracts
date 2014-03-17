@@ -1,4 +1,4 @@
-﻿namespace RWEST.Nexus.MDM.Contracts
+﻿namespace EnergyTrading.Mdm.Contracts
 {
     /// <summary>
     /// Standardized system names
@@ -6,9 +6,5 @@
     public static class SourceSystemNames
     {
         public const string Nexus = "Nexus";
-
-        public const string Trayport = "Trayport";
-
-        public const string Endur = "Endur";
     }
 }
