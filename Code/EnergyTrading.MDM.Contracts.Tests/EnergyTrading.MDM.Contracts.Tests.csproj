@@ -35,8 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EnergyTrading.Contracts">
-      <HintPath>..\packages\EnergyTrading.Contracts.2.7.29421.12\lib\net35\EnergyTrading.Contracts.dll</HintPath>
+    <Reference Include="EnergyTrading.Contracts, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnergyTrading.Contracts.2.8.0.9\lib\net35\EnergyTrading.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
