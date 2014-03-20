@@ -2,12 +2,12 @@
 {
     using EnergyTrading.Mdm.Contracts;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
-    [TestClass]
+    [TestFixture]
     public class ToMdmKeyFixture
     {
-        [TestMethod]
+        [Test]
         public void ReturnZeroForNullMdmEntity()
         {
             SourceSystem entity = null;
@@ -17,7 +17,7 @@
             Assert.AreEqual(0, candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnZeroForZeroIdentifiers()
         {
             var entity = new SourceSystem();
@@ -27,7 +27,7 @@
             Assert.AreEqual(0, candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnZeroForNoNexusIdentifier()
         {
             var entity = new SourceSystem();
@@ -38,7 +38,7 @@
             Assert.AreEqual(0, candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnNexusIdentifier()
         {
             var expected = new MdmId { Identifier = "1", IsMdmId = true };

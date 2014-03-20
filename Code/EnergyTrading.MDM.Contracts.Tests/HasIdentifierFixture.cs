@@ -2,12 +2,12 @@
 {
     using EnergyTrading.Mdm.Contracts;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
-    [TestClass]
+    [TestFixture]
     public class HasIdentifierFixture
     {
-        [TestMethod]
+        [Test]
         public void ShouldReturnTrueIfPresent()
         {
             var entity = new SourceSystem();
@@ -19,7 +19,7 @@
             Assert.IsTrue(entity.HasIdentifier(value));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldReturnFalseIfNotPresent()
         {
             var entity = new SourceSystem();
@@ -30,7 +30,7 @@
             Assert.IsFalse(entity.HasIdentifier(value));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldReturnFalseOnNullEntity()
         {
             SourceSystem entity = null;
@@ -40,7 +40,7 @@
             Assert.IsFalse(entity.HasIdentifier(value));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldReturnFalseOnNullIdentifier()
         {
             var entity = new SourceSystem();

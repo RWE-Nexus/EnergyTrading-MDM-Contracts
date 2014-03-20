@@ -4,12 +4,12 @@
 
     using EnergyTrading.Mdm.Contracts;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
-    [TestClass]
+    [TestFixture]
     public class MdmIdFixture
     {
-        [TestMethod]
+        [Test]
         public void ReturnsNumericIdentifierValue()
         {
             var entityId = new EntityId { Identifier = new MdmId { Identifier = "3" } };
@@ -19,7 +19,7 @@
             Assert.AreEqual(3, candidate.Value);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnsZeroForNonNumericIdentifierValue()
         {
             var entityId = new EntityId { Identifier = new MdmId { Identifier = "A" } };
@@ -29,7 +29,7 @@
             Assert.AreEqual(0, candidate.Value);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnNullForNullEntityId()
         {
             EntityId entityId = null;
@@ -38,7 +38,7 @@
             Assert.IsFalse(candidate.HasValue);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnNullForNullEntityIdIdentifier()
         {
             var entityId = new EntityId();
@@ -47,7 +47,7 @@
             Assert.IsFalse(candidate.HasValue);
         }
 
-        [TestMethod]
+        [Test]
         public void ToStringDisplaysSystemAndIdentifier()
         {
             var value = new MdmId { SystemName = "CME", Identifier = "MFF" };
@@ -55,7 +55,7 @@
             Assert.AreEqual("CME/MFF", value.ToString());
         }
 
-        [TestMethod]
+        [Test]
         public void NotEqualOnNull()
         {
             var value = new MdmId { SystemName = "CME", Identifier = "MFF" };
@@ -63,7 +63,7 @@
             Assert.IsFalse(value.Equals(null));
         }
 
-        [TestMethod]
+        [Test]
         public void EqualOnSystemNameIdentifier()
         {
             var value = new MdmId

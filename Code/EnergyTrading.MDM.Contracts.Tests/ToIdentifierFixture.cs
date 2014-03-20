@@ -2,12 +2,12 @@
 {
     using EnergyTrading.Mdm.Contracts;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
-    [TestClass]
+    [TestFixture]
     public class ToIdentifierFixture
     {
-        [TestMethod]
+        [Test]
         public void ReturnNullIfEntityIdIsNull()
         {
             EntityId value = null;
@@ -16,7 +16,7 @@
             Assert.IsNull(candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnIdentifierOfEntityId()
         {
             var value = new EntityId { Identifier = new MdmId { Identifier = "A" } };
@@ -25,7 +25,7 @@
             Assert.AreEqual("A", candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnNullIfEntityIdIdentifierIsNull()
         {
             var value = new EntityId();
@@ -34,7 +34,7 @@
             Assert.IsNull(candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnNullIfMdmIdIsNull()
         {
             MdmId value = null;
@@ -43,7 +43,7 @@
             Assert.IsNull(candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnIdentifierOfMdmId()
         {
             var value = new MdmId { Identifier = "A" };

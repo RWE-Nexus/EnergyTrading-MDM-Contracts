@@ -4,12 +4,12 @@
 
     using EnergyTrading.Mdm.Contracts;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
-    [TestClass]
+    [TestFixture]
     public class PrimaryIdentifierFixture
     {
-        [TestMethod]
+        [Test]
         public void ReturnNullIfEntityNull()
         {
             IMdmEntity entity = null;
@@ -18,7 +18,7 @@
             Assert.IsNull(candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnOriginatingIdentifierForEntityIfPresent()
         {
             var expected = new MdmId { SourceSystemOriginated = true };
@@ -31,7 +31,7 @@
             Assert.AreSame(expected, candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnNullIfIdentifiersNull()
         {
             List<MdmId> identifiers = null;
@@ -40,7 +40,7 @@
             Assert.IsNull(candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnNullIfIdentifierCountZero()
         {
             var identifiers = new List<MdmId>();
@@ -49,7 +49,7 @@
             Assert.IsNull(candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnOriginatingIdentifierIfPresent()
         {
             var expected = new MdmId { SourceSystemOriginated = true };
@@ -60,7 +60,7 @@
             Assert.AreSame(expected, candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnSystemIdentifierIfPresent()
         {
             var expected = new MdmId { SystemName = "A"};
@@ -71,7 +71,7 @@
             Assert.AreSame(expected, candidate);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnFirstIdentiiferIfOtherRulesFail()
         {
             var expected = new MdmId { SystemName = "A" };
