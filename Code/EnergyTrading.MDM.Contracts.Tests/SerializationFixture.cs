@@ -81,7 +81,7 @@
 
         public static void TextWriterDataContractSerialize<T>(TextWriter textWriter, T entity, Type[] types = null)
         {
-            using (var writer = XmlDictionaryWriter.CreateDictionaryWriter(XmlWriter.Create(textWriter, new XmlWriterSettings { Encoding = Encoding.UTF8, Indent = true, IndentChars = "  "})))
+            using (var writer = XmlDictionaryWriter.CreateDictionaryWriter(XmlWriter.Create(textWriter, new XmlWriterSettings { Encoding = Encoding.UTF8, Indent = true, IndentChars = "  " })))
             {
                 var serializer = new DataContractSerializer(typeof(T));
                 serializer.WriteObject(writer, entity);
@@ -94,12 +94,13 @@
         {
             var original = LoadEmbeddedResource("EnergyTrading.Mdm.Contracts.Test.OldMdmSourceSystemList.xml");
             var result = DataContractSerialize(DeserializeDataContractXml<SourceSystemList>(original));
-            Assert.AreEqual(this.ReplaceNamespaceNames(original), this.ReplaceNamespaceNames(result));
+            Assert.AreEqual(this.ReplaceItems(original), this.ReplaceItems(result));
         }
 
-        private string ReplaceNamespaceNames(string original)
+        private string ReplaceItems(string original)
         {
-            return Regex.Replace(original, "xmlns:.*=", "xmlns:replaced=");
+            var result = Regex.Replace(original, "xmlns:.*=", "xmlns:replaced=");
+            return result.Replace("\r", string.Empty);
         }
     }
 }
