@@ -4,6 +4,8 @@
     using System.IO;
     using System.Reflection;
     using System.Runtime.Serialization;
+    using System.Text;
+    using System.Text.RegularExpressions;
     using System.Xml;
 
     using NUnit.Framework;
@@ -55,6 +57,49 @@
             Assert.That(id.SystemName, Is.EqualTo(name));
             Assert.That(id.Identifier, Is.EqualTo(identifier));
             Assert.That(id.IsMdmId, Is.EqualTo(ismdmid));
+        }
+
+        private class Utf8StringWriter : StringWriter
+        {
+            public override Encoding Encoding
+            {
+                get
+                {
+                    return Encoding.UTF8;
+                }
+            }
+        }
+
+        public static string DataContractSerialize<T>(T entity)
+        {
+            using (var stream = new Utf8StringWriter())
+            {
+                TextWriterDataContractSerialize(stream, entity);
+                return stream.ToString();
+            }
+        }
+
+        public static void TextWriterDataContractSerialize<T>(TextWriter textWriter, T entity, Type[] types = null)
+        {
+            using (var writer = XmlDictionaryWriter.CreateDictionaryWriter(XmlWriter.Create(textWriter, new XmlWriterSettings { Encoding = Encoding.UTF8, Indent = true, IndentChars = "  "})))
+            {
+                var serializer = new DataContractSerializer(typeof(T));
+                serializer.WriteObject(writer, entity);
+                writer.Close();
+            }
+        }
+
+        [Test]
+        public void RoundTripStringObjectString()
+        {
+            var original = LoadEmbeddedResource("EnergyTrading.Mdm.Contracts.Test.OldMdmSourceSystemList.xml");
+            var result = DataContractSerialize(DeserializeDataContractXml<SourceSystemList>(original));
+            Assert.AreEqual(this.ReplaceNamespaceNames(original), this.ReplaceNamespaceNames(result));
+        }
+
+        private string ReplaceNamespaceNames(string original)
+        {
+            return Regex.Replace(original, "xmlns:.*=", "xmlns:replaced=");
         }
     }
 }

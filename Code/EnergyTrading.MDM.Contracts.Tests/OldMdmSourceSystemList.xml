@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceSystemList xmlns="http://schemas.rwe.com/nexus" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+<SourceSystemList xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.rwe.com/nexus">
   <SourceSystem>
     <Identifiers>
       <ReferenceID>
@@ -31,13 +31,13 @@
     </Identifiers>
     <Details>
       <Name>Endur</Name>
-      <Parent i:nil="true"/>
+      <Parent i:nil="true" />
     </Details>
     <Nexus>
       <StartDate>1753-01-01T00:00:00</StartDate>
       <EndDate>9999-12-31T00:00:00</EndDate>
     </Nexus>
-    <Links xmlns:a="http://www.w3.org/2005/Atom"/>
+    <Links xmlns:a="http://www.w3.org/2005/Atom" />
   </SourceSystem>
   <SourceSystem>
     <Identifiers>
@@ -70,13 +70,13 @@
     </Identifiers>
     <Details>
       <Name>Trayport</Name>
-      <Parent i:nil="true"/>
+      <Parent i:nil="true" />
     </Details>
     <Nexus>
       <StartDate>1753-01-01T00:00:00</StartDate>
       <EndDate>9999-12-31T00:00:00</EndDate>
     </Nexus>
-    <Links xmlns:a="http://www.w3.org/2005/Atom"/>
+    <Links xmlns:a="http://www.w3.org/2005/Atom" />
   </SourceSystem>
   <SourceSystem>
     <Identifiers>
@@ -109,13 +109,13 @@
     </Identifiers>
     <Details>
       <Name>Common</Name>
-      <Parent i:nil="true"/>
+      <Parent i:nil="true" />
     </Details>
     <Nexus>
       <StartDate>1753-01-01T00:00:00</StartDate>
       <EndDate>9999-12-31T00:00:00</EndDate>
     </Nexus>
-    <Links xmlns:a="http://www.w3.org/2005/Atom"/>
+    <Links xmlns:a="http://www.w3.org/2005/Atom" />
   </SourceSystem>
   <SourceSystem>
     <Identifiers>
@@ -139,13 +139,13 @@
     </Identifiers>
     <Details>
       <Name>ADC</Name>
-      <Parent i:nil="true"/>
+      <Parent i:nil="true" />
     </Details>
     <Nexus>
       <StartDate>1753-01-01T00:00:00</StartDate>
       <EndDate>9999-12-31T00:00:00</EndDate>
     </Nexus>
-    <Links xmlns:a="http://www.w3.org/2005/Atom"/>
+    <Links xmlns:a="http://www.w3.org/2005/Atom" />
   </SourceSystem>
   <SourceSystem>
     <Identifiers>
@@ -178,12 +178,12 @@
     </Identifiers>
     <Details>
       <Name>WHALE</Name>
-      <Parent i:nil="true"/>
+      <Parent i:nil="true" />
     </Details>
     <Nexus>
       <StartDate>1753-01-01T00:00:00</StartDate>
       <EndDate>9999-12-31T00:00:00</EndDate>
     </Nexus>
-    <Links xmlns:a="http://www.w3.org/2005/Atom"/>
+    <Links xmlns:a="http://www.w3.org/2005/Atom" />
   </SourceSystem>
 </SourceSystemList>
