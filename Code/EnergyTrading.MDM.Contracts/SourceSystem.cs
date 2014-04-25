@@ -6,9 +6,9 @@
 
     using EnergyTrading.Contracts.Atom;
 
-    [DataContract(Namespace = "http://schemas.energytrading.com/mdm")]
-    [XmlRoot(Namespace = "http://schemas.energytrading.com/mdm")]
-    [XmlType(Namespace = "http://schemas.energytrading.com/mdm")]
+    [DataContract(Namespace = "http://schemas.rwe.com/nexus")]
+    [XmlRoot(Namespace = "http://schemas.rwe.com/nexus")]
+    [XmlType(Namespace = "http://schemas.rwe.com/nexus")]
     public class SourceSystem : IMdmEntity
     {
         public SourceSystem()
@@ -27,8 +27,8 @@
         [XmlElement]
         public virtual SourceSystemDetails Details { get; set; }
 
-        [DataMember(Order = 3, EmitDefaultValue = false)]
-        [XmlElement]
+        [DataMember(Order = 3, EmitDefaultValue = false, Name = "Nexus")]
+        [XmlElement(ElementName = "Nexus")]
         public virtual SystemData MdmSystemData { get; set; }
 
         [DataMember(Order = 4, EmitDefaultValue = false)]

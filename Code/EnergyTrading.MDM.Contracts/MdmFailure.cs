@@ -6,8 +6,8 @@
 
     using EnergyTrading.Contracts.Atom;
 
-    [DataContract(Namespace = "http://schemas.energytrading.com/mdm", Name = "MdmFailureType")]
-    [XmlType(Namespace = "http://schemas.energytrading.com/mdm", TypeName = "MdmFailureType")]
+    [DataContract(Namespace = "http://schemas.rwe.com/nexus", Name = "NexusFailureType")]
+    [XmlType(Namespace = "http://schemas.rwe.com/nexus", TypeName = "NexusFailureType")]
     public class MdmFailure
     {
         [DataMember(Order = 1)]

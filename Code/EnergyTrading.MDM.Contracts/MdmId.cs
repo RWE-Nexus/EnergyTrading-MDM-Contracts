@@ -4,8 +4,8 @@
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
-    [DataContract(Namespace = "http://schemas.energytrading.com/mdm")]
-    [XmlType(Namespace = "http://schemas.energytrading.com/mdm")]
+    [DataContract(Namespace = "http://schemas.rwe.com/nexus")]
+    [XmlType(Namespace = "http://schemas.rwe.com/nexus")]
     [KnownType(typeof(Mapping))]
     public class MdmId : IEquatable<MdmId>
     {
@@ -39,8 +39,8 @@
         [XmlElement(ElementName = "OriginatingSourceIND")]
         public virtual bool SourceSystemOriginated { get; set; }
 
-        [DataMember(Order = 7, Name = "IsMdmId")]
-        [XmlElement(ElementName = "IsMdmId")]
+        [DataMember(Order = 7, Name = "IsNexusID")]
+        [XmlElement(ElementName = "IsNexusID")]
         public virtual bool IsMdmId { get; set; }
 
         [DataMember(Order = 8, Name = "DefaultReverseIND", EmitDefaultValue = false)]

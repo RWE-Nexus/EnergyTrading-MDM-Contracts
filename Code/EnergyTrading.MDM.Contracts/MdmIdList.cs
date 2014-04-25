@@ -4,8 +4,8 @@
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
-    [CollectionDataContract(Namespace = "http://schemas.energytrading.com/mdm", ItemName = "ReferenceID")]
-    [XmlType(Namespace = "http://schemas.energytrading.com/mdm")]
+    [CollectionDataContract(Namespace = "http://schemas.rwe.com/nexus", ItemName = "ReferenceID")]
+    [XmlType(Namespace = "http://schemas.rwe.com/nexus", TypeName = "NexusIdList")]
     public class MdmIdList : List<MdmId>
     {
     }

@@ -3,9 +3,9 @@
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
-    [DataContract(Namespace = "http://schemas.energytrading.com/mdm", Name = "MappingResponseType")]
-    [XmlRoot(Namespace = "http://schemas.energytrading.com/mdm")]
-    [XmlType(Namespace = "http://schemas.energytrading.com/mdm", TypeName = "MappingResponseType")]
+    [DataContract(Namespace = "http://schemas.rwe.com/nexus", Name = "MappingResponseType")]
+    [XmlRoot(Namespace = "http://schemas.rwe.com/nexus")]
+    [XmlType(Namespace = "http://schemas.rwe.com/nexus", TypeName = "MappingResponseType")]
     public class MappingResponse
     {
         public MappingResponse()

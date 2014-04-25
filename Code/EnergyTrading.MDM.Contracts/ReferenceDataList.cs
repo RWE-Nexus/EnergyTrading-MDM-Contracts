@@ -4,9 +4,9 @@ namespace EnergyTrading.Mdm.Contracts
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
-    [CollectionDataContract(Namespace = "http://schemas.energytrading.com/mdm", ItemName = "ReferenceData")]
-    [XmlRoot(Namespace = "http://schemas.energytrading.com/mdm")]
-    [XmlType(Namespace = "http://schemas.energytrading.com/mdm")]
+    [CollectionDataContract(Namespace = "http://schemas.rwe.com/nexus", ItemName = "ReferenceData")]
+    [XmlRoot(Namespace = "http://schemas.rwe.com/nexus")]
+    [XmlType(Namespace = "http://schemas.rwe.com/nexus")]
     public class ReferenceDataList : List<ReferenceData>
     {
     }

@@ -4,9 +4,9 @@
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
-    [CollectionDataContract(Namespace = "http://schemas.energytrading.com/mdm", ItemName = "SourceSystem")]
-    [XmlRoot(Namespace = "http://schemas.energytrading.com/mdm")]
-    [XmlType(Namespace = "http://schemas.energytrading.com/mdm")]
+    [CollectionDataContract(Namespace = "http://schemas.rwe.com/nexus", ItemName = "SourceSystem")]
+    [XmlRoot(Namespace = "http://schemas.rwe.com/nexus")]
+    [XmlType(Namespace = "http://schemas.rwe.com/nexus")]
     public class SourceSystemList : List<SourceSystem>
     {
     }

@@ -12,8 +12,8 @@
     /// <remarks>
     /// Sufficient information so we can display a label and know how to retrieve the target.
     /// </remarks>
-    [DataContract(Namespace = "http://schemas.energytrading.com/mdm")]
-    [XmlType(Namespace = "http://schemas.energytrading.com/mdm")]
+    [DataContract(Namespace = "http://schemas.rwe.com/nexus")]
+    [XmlType(Namespace = "http://schemas.rwe.com/nexus")]
     public class EntityId
     {
         /// <summary>
