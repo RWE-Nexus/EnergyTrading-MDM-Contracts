@@ -5,7 +5,7 @@
     using System.Xml.Serialization;
 
     [DataContract(Namespace = "http://schemas.rwe.com/nexus")]
-    [XmlType(Namespace = "http://schemas.rwe.com/nexus")]
+    [XmlType(Namespace = "http://schemas.rwe.com/nexus", TypeName = "NexusId")]
     [KnownType(typeof(Mapping))]
     public class MdmId : IEquatable<MdmId>
     {
