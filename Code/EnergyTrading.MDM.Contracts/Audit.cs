@@ -19,5 +19,10 @@
         [DataMember(Order = 3)]
         [XmlElement]
         public virtual int VersionNumber { get; set; }
+
+        [DataMember(Order = 4)]
+        [XmlElement]
+        public virtual ulong Version { get; set; }
+
     }
 }
