@@ -1,5 +1,4 @@
-EnergyTrading.MDM.Contracts
-===========================
+#EnergyTrading.MDM.Contracts
 
 XML compliant dto / contract definitions, interfaces and base classes that the EnergyTrading.MDM service consumes.
 
