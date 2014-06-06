@@ -74,7 +74,7 @@
         }
 
         /// <summary>
-        /// Gets a MdmId for a system
+        /// Gets a MDM Id for a system
         /// </summary>
         /// <param name="entity">Entity to use</param>
         /// <param name="systemName">System to check</param>
@@ -85,7 +85,7 @@
         }
 
         /// <summary>
-        /// Gets a MdmId for a system
+        /// Gets a MDM Id for a system
         /// </summary>
         /// <param name="identifiers">Identifiers to use</param>
         /// <param name="systemName">System to check</param>

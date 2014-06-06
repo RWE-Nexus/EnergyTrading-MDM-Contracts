@@ -23,6 +23,5 @@
         [DataMember(Order = 4)]
         [XmlElement]
         public virtual ulong Version { get; set; }
-
     }
 }
