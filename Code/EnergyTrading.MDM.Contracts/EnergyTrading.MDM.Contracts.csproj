@@ -35,9 +35,8 @@
     <DocumentationFile>bin\Release\EnergyTrading.MDM.Contracts.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EnergyTrading.Contracts, Version=77.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EnergyTrading.Contracts.2.8.1.77\lib\net35\EnergyTrading.Contracts.dll</HintPath>
+    <Reference Include="EnergyTrading.Contracts">
+      <HintPath>..\packages\EnergyTrading.Contracts.2.8.1.112\lib\net35\EnergyTrading.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
